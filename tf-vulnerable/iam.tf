@@ -26,6 +26,7 @@ resource "aws_iam_role" "test_role" {
       },
     ]
   })
+
 }
 
 data "aws_iam_policy_document" "s3_policy" {
@@ -34,6 +35,7 @@ data "aws_iam_policy_document" "s3_policy" {
       type        = "AWS"
       identifiers = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"]
     }
+
     actions   = ["s3:*"]
     resources = ["*"]
   }
