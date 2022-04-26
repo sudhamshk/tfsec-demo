@@ -1,0 +1,10 @@
+fileignoreconfig:
+- filename: tf-fix/deploy-s3.tf/s3.tf
+  checksum: 1203c2afedce69c0653284444848918b3b1038ddfff8fe5c2aa6b2c820ac316b
+- filename: tf-vulnerable/.terraform.lock.hcl
+  checksum: ce633bcc85bf191154bd800b42cf554472997f9788b2115a6a0908b8ebb0e558
+- filename: tf-vulnerable/deploy-ec2/.terraform.lock.hcl
+  checksum: 806aea6c10d4d0bfb44997406598a5876ec63f4fe11a70a1b8fba6a166879299
+- filename: tf-vulnerable/deploy-s3/.terraform.lock.hcl
+  checksum: df9b7df270a30a810e87186f88033a5cd88f7d08025cf57ce06eca283bff2f7c
+version: "1.0"
