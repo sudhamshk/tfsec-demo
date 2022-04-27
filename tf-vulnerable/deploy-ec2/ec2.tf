@@ -12,12 +12,14 @@ data "aws_ami" "amazon_linux_2" {
     values = ["x86_64"]
   }
 
+
   owners = ["137112412989"] #amazon
 }
 
 resource "aws_instance" "bastion" {
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = "t3.micro"
+
 
   root_block_device {
     volume_type           = "gp2"
