@@ -1,0 +1,34 @@
+checks:
+  - code: DEMO001
+    description: Custom check to ensure the CostCentre tag is applied to EC2 instances
+    impact: By not having CostCentre we can't keep track of billing
+    resolution: Add the CostCentre tag
+    requiredTypes:
+      - resource
+    requiredLabels:
+      - aws_instance
+    severity: ERROR
+    matchSpec:
+      name: tags
+      action: contains
+      value: CostCentre
+    errorMessage: The required CostCentre tag was missing
+    relatedLinks:
+      - http://internal.acmecorp.com/standards/aws/tagging.html
+
+  - code: DEMO002
+    description: Custom check to ensure the security group is ending with -sg
+    impact: security group naming convention is not followed
+    resolution: end secuity group name with -sg
+    requiredTypes:
+      - resource
+    requiredLabels:
+      - aws_security_group
+    severity: ERROR
+    matchSpec:
+      name: tags
+      action: endsWith
+      value: -sg
+    errorMessage: secuity group name should end with -sg
+    relatedLinks:
+      - http://internal.acmecorp.com/standards/aws/naming.html
